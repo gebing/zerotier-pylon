@@ -1,5 +1,5 @@
 FROM alpine:latest
-COPY /code/pylon /usr/local/bin
+COPY code/pylon /usr/local/bin
 EXPOSE 443
 EXPOSE 9993/udp
 # ENV ZT_PYLON_SECRET_KEY=
