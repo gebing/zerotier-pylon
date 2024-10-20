@@ -3,8 +3,8 @@ INCLUDES?=-Iext/libzt/ext/ZeroTierOne/osdep -Iext/libzt/ext/ZeroTierOne/ext/prom
 
 
 release:
-	git submodule update --init
-	git -C ext/libzt submodule update --init
+	#git submodule update --init
+	#git -C ext/libzt submodule update --init
 	cd ext/libzt && ./build.sh host "release"
 	$(CXX) -O3 $(INCLUDES) -Wno-deprecated -std=c++11 pylon.cpp -o pylon ext/libzt/dist/*-host-release/lib/libzt.a -Iext/libzt/include
 
