@@ -1,5 +1,9 @@
 FROM alpine:latest
-COPY code/pylon /usr/local/bin
+
+RUN  apk update && apk upgrade \
+    && apk add --update iproute2 net-tools fping iputils-ping iputils-arping procps jq netcat-openbsd mtr musl libstdc++ libgcc
+
+COPY code/pylon /usr/local/bin/
 EXPOSE 443
 EXPOSE 9993/udp
 # ENV ZT_PYLON_SECRET_KEY=
